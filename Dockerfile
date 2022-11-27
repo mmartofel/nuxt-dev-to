@@ -2,10 +2,11 @@
 FROM registry.access.redhat.com/ubi9/nodejs-18:1-17
 
 # set destination work directory
-WORKDIR /opt/app-root/src
+# WORKDIR /opt/app-root/src
 
 # copy the app, note .dockerignore
-COPY . /opt/app-root/src
+# COPY . /opt/app-root/src
+COPY . ./
 RUN npm install
 RUN npm run build
 
