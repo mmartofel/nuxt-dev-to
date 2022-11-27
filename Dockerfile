@@ -1,5 +1,5 @@
 # Dockerfile
-FROM registry.access.redhat.com/ubi9/nodejs-18:1-17
+FROM registry.access.redhat.com/ubi8/nodejs-16:latest
 
 # set destination work directory
 RUN mkdir -p /opt/app-root/src/nuxt
