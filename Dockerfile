@@ -2,11 +2,12 @@
 FROM registry.access.redhat.com/ubi9/nodejs-18:1-17
 
 # set destination work directory
-# WORKDIR /opt/app-root/src
+RUN mkdir -p /opt/app-root/src/nuxt
+WORKDIR /opt/app-root/src/nuxt
 
 # copy the app, note .dockerignore
 # COPY . /opt/app-root/src
-COPY . ./
+COPY . /opt/app-root/src/nuxt
 RUN npm install
 RUN npm run build
 
