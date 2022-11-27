@@ -12,8 +12,10 @@ COPY . /opt/app-root/src
 RUN whoami
 RUN id
 RUN ls -al
-# RUN npm install
+RUN npm install
+RUN ls -al
 RUN npm run build
+RUN ls -al
 
 EXPOSE 3000
 
