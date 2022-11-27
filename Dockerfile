@@ -1,25 +1,18 @@
 # Dockerfile
-FROM registry.access.redhat.com/ubi8/nodejs-16:latest
+FROM registry.access.redhat.com/ubi9/nodejs-18:latest
 
 # set destination work directory
 WORKDIR /opt/app-root/src
 
-# copy the app, note .dockerignore
-# COPY . /opt/app-root/src
+# copy the app sorces
 COPY . /opt/app-root/src
-# RUN chmod 666 /opt/app-root/src/*.json
 
-RUN whoami
-RUN id
-RUN ls -al
 RUN npm install
-RUN ls -al
 RUN npm run build
-RUN ls -al
-
-EXPOSE 3000
 
 ENV NUXT_HOST=0.0.0.0
 ENV NUXT_PORT=3000
+
+EXPOSE 3000
 
 CMD [ "npm", "start" ]
