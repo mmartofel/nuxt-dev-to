@@ -2,14 +2,15 @@
 FROM registry.access.redhat.com/ubi8/nodejs-16:latest
 
 # set destination work directory
-RUN mkdir -p /opt/app-root/src/nuxt
-WORKDIR /opt/app-root/src/nuxt
+WORKDIR /opt/app-root/src
 
 # copy the app, note .dockerignore
 # COPY . /opt/app-root/src
-COPY . /opt/app-root/src/nuxt
-RUN chmod 777 /opt/app-root/src/nuxt
+COPY . /opt/app-root/src
+# RUN chmod 777 /opt/app-root/src
 
+RUN whoami
+RUN id
 RUN ls -al
 RUN npm install
 RUN npm run build
