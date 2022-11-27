@@ -7,7 +7,7 @@ WORKDIR /opt/app-root/src
 # copy the app sorces
 COPY . /opt/app-root/src
 
-RUN npm install
+RUN npm install -loglevel silent
 RUN npm run build
 
 ENV NUXT_HOST=0.0.0.0
@@ -15,4 +15,4 @@ ENV NUXT_PORT=3000
 
 EXPOSE 3000
 
-CMD [ "npm", "start" ]
+CMD [ "npm", "start", "-loglevel silent" ]
