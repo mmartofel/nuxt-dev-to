@@ -7,7 +7,7 @@ WORKDIR /opt/app-root/src
 # copy the app, note .dockerignore
 # COPY . /opt/app-root/src
 COPY . /opt/app-root/src
-# RUN chmod 777 /opt/app-root/src
+RUN chmod 666 /opt/app-root/src/*.json
 
 RUN whoami
 RUN id
