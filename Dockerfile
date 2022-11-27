@@ -13,7 +13,7 @@ RUN whoami
 RUN id
 RUN ls -al
 RUN npm install
-RUN npm run build
+RUN npm build
 
 EXPOSE 3000
 
