@@ -1,5 +1,5 @@
 # Dockerfile
-FROM registry.access.redhat.com/ubi9/nodejs-16:latest
+FROM registry.access.redhat.com/ubi8/nodejs-16:latest
 
 # set destination work directory
 WORKDIR /opt/app-root/src
