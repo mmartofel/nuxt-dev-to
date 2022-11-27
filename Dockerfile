@@ -8,6 +8,8 @@ WORKDIR /opt/app-root/src/nuxt
 # copy the app, note .dockerignore
 # COPY . /opt/app-root/src
 COPY . /opt/app-root/src/nuxt
+RUN chmod 777 /opt/app-root/src/nuxt
+
 RUN ls -al
 RUN npm install
 RUN npm run build
